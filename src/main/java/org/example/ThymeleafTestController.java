@@ -26,7 +26,7 @@ public class ThymeleafTestController  extends HttpServlet {
         engine = new TemplateEngine();
 
         FileTemplateResolver resolver = new FileTemplateResolver();
-        resolver.setPrefix("/Users/lubovlysenko/IdeaProjects/JavaDev/homeWork9/ThymeleafCookie/templates/");
+        resolver.setPrefix(getClass().getClassLoader().getResource("/templates").getPath());
         resolver.setSuffix(".html");
         resolver.setTemplateMode("HTML5");
         resolver.setOrder(engine.getTemplateResolvers().size());
